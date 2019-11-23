@@ -1,7 +1,4 @@
-using HTTP
-using Revise
-using CodecZlib
-using JSON
+using Stackoverflow
 
 mutable struct Questions
     link::Vector
@@ -38,11 +35,8 @@ function getrecentquestionsfortag(;tag::String = "Julia", site::String = "stacko
     else
         r = HTTP.request("GET", "https://api.stackexchange.com/2.2/questions?order=$(order)&sort=$(sort)&tagged=$(tag)&site=$(site)"; verbose=3)
     end
-    compressed = HTTP.payload(r);
 
-    decompressed = transcode(GzipDecompressor, compressed);
-
-    json = JSON.parse(IOBuffer(decompressed))
+    json = convert_HTTP_Response_To_JSON(r)
 
     for (k, v) in json
         if occursin("items", k)
@@ -101,6 +95,3 @@ function getrecentquestionsfortag(;tag::String = "Julia", site::String = "stacko
     end
 
 end
-
-#fromdate="1573776000", todate="1574545174"
-qHolder = getrecentquestionsfortag()

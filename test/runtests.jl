@@ -1,6 +1,6 @@
 using Stackoverflow
 using Test
 
-@testset "Stackoverflow.jl" begin
-    # Write your own tests here.
-end
+
+qHolder = getrecentquestionsfortag()
+@test_nowarn qHolder[1].answer_count
