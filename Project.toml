@@ -3,6 +3,12 @@ uuid = "1a8df32f-26ad-40b8-8029-212bc012bd57"
 authors = ["Logan Kilpatrick <lok026@g.harvard.edu>"]
 version = "0.1.0"
 
+[deps]
+CodecZlib = "944b1d66-785c-5afd-91f1-9de20f533193"
+HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
+JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
+
 [compat]
 julia = "1"
 
