@@ -8,7 +8,7 @@ Takes in a username and returns the privilages said user has.
 function checkmyprivilages(username::String)
     println("TODO")
     #https://api.stackexchange.com/docs/users#order=desc&sort=reputation&inname=logankilpatrick&filter=default&site=stackoverflow&run=true
-    #Query this to get the rep and then do some basic math to see level. 
+    #Query this to get the rep and then do some basic math to see level.
 end
 
 """
@@ -18,7 +18,7 @@ Prints out the various privilage levels in Stack Overflow and the rep
 required to have said privilages.
 """
 function getprivilages()
-    r = HTTP.request("GET", "https://api.stackexchange.com/2.2/privileges?site=stackoverflow"; verbose=3)
+    r = HTTP.request("GET", "https://api.stackexchange.com/2.2/privileges?site=stackoverflow")
     json_obj = Stackoverflow.convert_HTTP_Response_To_JSON(r)
 
     for (k, v) in json_obj

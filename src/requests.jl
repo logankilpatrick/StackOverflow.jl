@@ -31,9 +31,9 @@ function getrecentquestionsfortag(;tag::String = "Julia", site::String = "stacko
 
     if fromdate != "" && todate != ""
         datequery = "fromdate=$(fromdate)&todate=$(todate)&"  #?fromdate=1573776000&todate=1574467200&order
-        r = HTTP.request("GET", "https://api.stackexchange.com/2.2/questions?$(datequery)order=$(order)&sort=$(sort)&tagged=$(tag)&site=$(site)"; verbose=3)
+        r = HTTP.request("GET", "https://api.stackexchange.com/2.2/questions?$(datequery)order=$(order)&sort=$(sort)&tagged=$(tag)&site=$(site)")
     else
-        r = HTTP.request("GET", "https://api.stackexchange.com/2.2/questions?order=$(order)&sort=$(sort)&tagged=$(tag)&site=$(site)"; verbose=3)
+        r = HTTP.request("GET", "https://api.stackexchange.com/2.2/questions?order=$(order)&sort=$(sort)&tagged=$(tag)&site=$(site)")
     end
 
     json = convert_HTTP_Response_To_JSON(r)
