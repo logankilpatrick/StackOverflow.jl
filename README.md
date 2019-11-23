@@ -1,4 +1,4 @@
-# Stackoverflow
+# Stackoverflow.jl
 
 This package is designed as a wrapped for the [StackOverflow API](https://api.stackexchange.com).
 
