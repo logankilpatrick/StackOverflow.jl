@@ -1,9 +1,9 @@
-# Stackoverflow
+# Stackoverflow.jl
 
 This package is designed as a wrapped for the [StackOverflow API](https://api.stackexchange.com).
 
 Support from the community would be welcomed in order to expedite coverage of all of the basic abilities.
-
+I am also very aware that my approach to implimenting this API in Julia is likely not the best approach. This repo and my Julia capabilities are always a WIP. 
 
 ## Usage
 
