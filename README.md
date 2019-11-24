@@ -43,3 +43,72 @@ julia> qHolder[1].answer_count
 julia> qHolder[2]
 Questions(Any["https://stackoverflow.com/questions/58956518/how-can-i-view-profiling-information-visually"], Any[145], Any[1574259575], Any[true], Any[Dict{String,Any}("user_type" => "registered","display_name" => "Marouane1994","reputation" => 173,"user_id" => 12078089,"link" => "https://stackoverflow.com/users/12078089/marouane1994","profile_image" => "https://www.gravatar.com/avatar/67241161f774e0fd40923e37c370fb26?s=128&d=identicon&r=PG&f=1")], Any[1574519259], Any[0], Any[], Any[58956518], Any[Any["julia"]], Any["How can I view profiling information visually?"], Any[1])
 ```
+
+Another example:
+
+```julia
+julia> using Stackoverflow
+[ Info: Precompiling Stackoverflow [1a8df32f-26ad-40b8-8029-212bc012bd57]
+
+julia> checkmyprivilages("logankilpatrick")
+Your current rep is 2165 and your privilages are as follows: 
+
+
+description: Ask a question or contribute an answer
+short_description: create posts
+
+description: Discuss the site itself,  bugs, feedback, and governance
+short_description: participate in meta
+
+description: Post more links, answer protected questions
+short_description: answer protected questions
+
+description: Create answers that can be easily edited by most users
+short_description: create wiki posts
+
+description: Bring content to the attention of the community via flags
+short_description: flag posts
+
+description: Indicate when questions and answers are useful
+short_description: vote up
+
+description: Participate in this site's chat rooms
+short_description: talk in chat
+
+description: Leave comments on other people's posts
+short_description: comment everywhere
+
+description: Offer some of your reputation as bounty on a question
+short_description: set bounties
+
+description: Collaborate on the editing and improvement of wiki posts
+short_description: edit community wikis
+
+description: Create new chat rooms
+short_description: create chat rooms
+
+description: Indicate when questions and answers are not useful
+short_description: vote down
+
+description: Some ads are now automatically disabled
+short_description: see reduced ads
+
+description: View and cast close/reopen votes on your own questions
+short_description: view close votes
+
+description: Access first posts and late answers review queues
+short_description: access review queues
+
+description: See vote breakout, expandable usercard
+short_description: see votes, expandable usercard
+
+description: Create chat rooms where only specific users may talk
+short_description: create gallery chat rooms
+
+description: Add new tags to the site
+short_description: create new tags
+
+description: Edits to any question or answer are applied immediately
+short_description: edit questions and answers
+
+```
