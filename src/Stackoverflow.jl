@@ -1,7 +1,6 @@
 module Stackoverflow
 
 using HTTP
-using Revise
 using CodecZlib
 using JSON
 
@@ -11,8 +10,8 @@ export
 
 include("privilages.jl")
 export
+    checkmyprivilages,
     getprivilages
-    checkmyprivilages
 
 include("utils.jl")
 export

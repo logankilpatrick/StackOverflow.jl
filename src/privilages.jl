@@ -5,10 +5,25 @@ using Stackoverflow
 
 Takes in a username and returns the privilages said user has.
 """
-function checkmyprivilages(username::String)
-    println("TODO")
-    #https://api.stackexchange.com/docs/users#order=desc&sort=reputation&inname=logankilpatrick&filter=default&site=stackoverflow&run=true
-    #Query this to get the rep and then do some basic math to see level.
+function checkmyprivilages(username::String = "")
+
+
+    r = HTTP.request("GET", "https://api.stackexchange.com/2.2/users?order=desc&sort=reputation&inname=$(username)&site=stackoverflow")
+
+    json_obj = Stackoverflow.convert_HTTP_Response_To_JSON(r)
+
+    for (k, v) in json_obj
+        if occursin("items", k)
+            for item in v
+                for (key, value) in item
+                    if key == "reputation"
+                        println(value)
+                    end
+                end
+            end
+        end
+    end
+
 end
 
 """
