@@ -8,10 +8,10 @@ include("requests.jl")
 export
     getrecentquestionsfortag
 
-include("privilages.jl")
+include("privileges.jl")
 export
-    checkmyprivilages,
-    getprivilages
+    checkmyprivileges,
+    getprivileges
 
 include("utils.jl")
 export

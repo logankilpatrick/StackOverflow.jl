@@ -3,7 +3,7 @@
 This package is designed as a wrapped for the [StackOverflow API](https://api.stackexchange.com).
 
 Support from the community would be welcomed in order to expedite coverage of all of the basic abilities.
-I am also very aware that my approach to implimenting this API in Julia is likely not the best approach. This repo and my Julia capabilities are always a WIP. 
+I am also very aware that my approach to implementing this API in Julia is likely not the best approach. This repo and my Julia capabilities are always a WIP.
 
 ## Usage
 
@@ -47,11 +47,12 @@ Questions(Any["https://stackoverflow.com/questions/58956518/how-can-i-view-profi
 Another example:
 
 ```julia
+
 julia> using Stackoverflow
 [ Info: Precompiling Stackoverflow [1a8df32f-26ad-40b8-8029-212bc012bd57]
-
-julia> checkmyprivilages("logankilpatrick")
-Your current rep is 2165 and your privilages are as follows: 
+^[[A
+julia> checkmyprivileges("logankilpatrick")
+Your current rep is 2165 and your privileges are as follows:
 
 
 description: Ask a question or contribute an answer
@@ -110,5 +111,4 @@ short_description: create new tags
 
 description: Edits to any question or answer are applied immediately
 short_description: edit questions and answers
-
 ```

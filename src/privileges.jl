@@ -1,11 +1,11 @@
 using Stackoverflow
 
 """
-    checkmyprivilages(username::String)
+    checkmyprivileges(username::String)
 
-Takes in a username and returns the privilages said user has.
+Takes in a username and returns the privileges said user has.
 """
-function checkmyprivilages(username::String = "")
+function checkmyprivileges(username::String = "")
 
 
     r = HTTP.request("GET", "https://api.stackexchange.com/2.2/users?order=desc&sort=reputation&inname=$(username)&site=stackoverflow")
@@ -19,7 +19,7 @@ function checkmyprivilages(username::String = "")
                 for (key, value) in item
                     if key == "reputation"
 
-                        println("Your current rep is $(value) and your privilages are as follows: \n")
+                        println("Your current rep is $(value) and your privileges are as follows: \n")
                         if value >= 1
 
                             println("\ndescription: Ask a question or contribute an answer")
@@ -166,7 +166,7 @@ function checkmyprivilages(username::String = "")
                         end
 
                         if value == 0
-                            println("You have no privilages currently.")
+                            println("You have no privileges currently.")
                         end
 
                     end
@@ -178,12 +178,12 @@ function checkmyprivilages(username::String = "")
 end
 
 """
-    getprivilages()
+    getprivileges()
 
-Prints out the various privilage levels in Stack Overflow and the rep
-required to have said privilages.
+Prints out the various privilege levels in Stack Overflow and the rep
+required to have said privileges.
 """
-function getprivilages()
+function getprivileges()
     r = HTTP.request("GET", "https://api.stackexchange.com/2.2/privileges?site=stackoverflow")
     json_obj = Stackoverflow.convert_HTTP_Response_To_JSON(r)
 
