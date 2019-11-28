@@ -1,4 +1,4 @@
-module Stackoverflow
+module StackOverflow
 
 using HTTP
 using CodecZlib

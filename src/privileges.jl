@@ -1,4 +1,4 @@
-using Stackoverflow
+using StackOverflow
 
 """
     checkmyprivileges(username::String)
@@ -11,7 +11,7 @@ function checkmyprivileges(username::String = "")
     r = HTTP.request("GET", "https://api.stackexchange.com/2.2/users?order=desc&sort=reputation&inname=$(username)&site=stackoverflow")
     #TODO: May return multiple names.
 
-    json_obj = Stackoverflow.convert_HTTP_Response_To_JSON(r)
+    json_obj = StackOverflow.convert_HTTP_Response_To_JSON(r)
 
     for (k, v) in json_obj
         if occursin("items", k)

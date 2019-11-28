@@ -1,4 +1,4 @@
-# Stackoverflow.jl
+# StackOverflow.jl
 
 This package is designed as a wrapped for the [StackOverflow API](https://api.stackexchange.com).
 
@@ -9,7 +9,7 @@ I am also very aware that my approach to implementing this API in Julia is likel
 
 ```julia
 
-julia> using Stackoverflow
+julia> using StackOverflow
 
 julia> qHolder = getrecentquestionsfortag()
 
@@ -48,8 +48,8 @@ Another example:
 
 ```julia
 
-julia> using Stackoverflow
-[ Info: Precompiling Stackoverflow [1a8df32f-26ad-40b8-8029-212bc012bd57]
+julia> using StackOverflow
+[ Info: Precompiling StackOverflow [1a8df32f-26ad-40b8-8029-212bc012bd57]
 ^[[A
 julia> checkmyprivileges("logankilpatrick")
 Your current rep is 2165 and your privileges are as follows:

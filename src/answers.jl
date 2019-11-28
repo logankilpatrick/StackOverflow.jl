@@ -1,4 +1,4 @@
-using Stackoverflow
+using StackOverflow
 
 """
     getquestions(sort::string = "creation", order::String = "desc")
@@ -9,7 +9,7 @@ function getquestions(sort::String = "creation", order::String = "desc")
 
     r = HTTP.request("GET", "https://api.stackexchange.com/2.2/answers?order=$(order)&sort=$(sort)&site=stackoverflow")
 
-    json_obj = Stackoverflow.convert_HTTP_Response_To_JSON(r)
+    json_obj = StackOverflow.convert_HTTP_Response_To_JSON(r)
 
     for (k, v) in json_obj
         if occursin("items", k)
