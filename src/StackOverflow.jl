@@ -21,4 +21,8 @@ include("answers.jl")
 export
     getquestions
 
+include("badges.jl")
+export 
+    getrecentbadgerecipients
+
 end # module
