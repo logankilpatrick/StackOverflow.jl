@@ -49,8 +49,7 @@ Another example:
 ```julia
 
 julia> using StackOverflow
-[ Info: Precompiling StackOverflow [1a8df32f-26ad-40b8-8029-212bc012bd57]
-^[[A
+
 julia> checkmyprivileges("logankilpatrick")
 Your current rep is 2165 and your privileges are as follows:
 
