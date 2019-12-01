@@ -5,6 +5,13 @@ This package is designed as a wrapped for the [StackOverflow API](https://api.st
 Support from the community would be welcomed in order to expedite coverage of all of the basic abilities.
 I am also very aware that my approach to implementing this API in Julia is likely not the best approach. This repo and my Julia capabilities are always a WIP.
 
+## Installation
+
+```julia
+] add StackOverflow
+```
+_Note_: Typing `]` into the Julia Repl will put you in the package manager. 
+
 ## Usage
 
 ```julia
