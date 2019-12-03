@@ -1,4 +1,4 @@
-# StackOverflow.jl
+![logo](assets/logo.png)
 
 This package is designed as a wrapped for the [StackOverflow API](https://api.stackexchange.com).
 
