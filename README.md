@@ -15,9 +15,8 @@ I am also very aware that my approach to implementing this API in Julia is likel
 
 ## Installation
 
-```julia
-] add StackOverflow
-```
+![logo](assets/install.png)
+
 _Note_: Typing `]` into the Julia Repl will put you in the package manager. 
 
 ## Usage
