@@ -2,8 +2,7 @@
 
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/logankilpatrick/StackOverflow.jl?style=for-the-badge) 
 
-[![alt text](https://img.shields.io/badge/slack-join%20StackOverflow%20on%20Slack-9d72b1?style=for-the-badge&logo=slack
-)](https://slackinvite.julialang.org)
+[![alt text](https://img.shields.io/badge/slack-join%20the%20StackOverflow%20channel%20on%20Slack-9d72b1?style=for-the-badge&logo=slack)](https://slackinvite.julialang.org) 
 
 ![GitHub followers](https://img.shields.io/github/followers/logankilpatrick?label=Follow&style=social)
 
