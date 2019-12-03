@@ -1,6 +1,9 @@
 # StackOverflow.jl
 
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/logankilpatrick/StackOverflow.jl?style=for-the-badge)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/logankilpatrick/StackOverflow.jl?style=for-the-badge) 
+
+![GitHub followers](https://img.shields.io/github/followers/logankilpatrick?label=Follow&style=social)
+
 
 This package is designed as a wrapped for the [StackOverflow API](https://api.stackexchange.com).
 
