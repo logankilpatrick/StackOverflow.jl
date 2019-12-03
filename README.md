@@ -1,4 +1,4 @@
-# StackOverflow.jl
+![logo](assets/logo.png)
 
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/logankilpatrick/StackOverflow.jl?style=for-the-badge) 
 
