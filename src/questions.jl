@@ -16,8 +16,8 @@ mutable struct Questions
 end
 
 """
-    getrecentquestionsfortag(tag::String = "Julia", site::String = "stackoverflow", order::String = "desc",
-                                    sort::String = "activity")
+    getrecentquestionsfortag(;tag::String = "Julia", site::String = "stackoverflow", order::String = "desc",
+                                    sort::String = "activity", todate::String = "", fromdate::String = "")
 
 Will return the 30 StackOverflow questions given a certain tag and sort parameter.
 
