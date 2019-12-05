@@ -19,10 +19,10 @@ export
 
 include("answers.jl")
 export
-    getquestions
+    getanswers
 
 include("badges.jl")
-export 
+export
     getrecentbadgerecipients
 
 end # module

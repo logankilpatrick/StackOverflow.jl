@@ -3,9 +3,9 @@ using StackOverflow
 """
     getquestions(sort::string = "creation", order::String = "desc")
 
-Returns 30 most recent answers given a certain sort parameter.
+Prints 30 most recent answers given a certain sort parameter.
 """
-function getquestions(sort::String = "creation", order::String = "desc")
+function getanswers(sort::String = "creation", order::String = "desc")
 
     r = HTTP.request("GET", "https://api.stackexchange.com/2.2/answers?order=$(order)&sort=$(sort)&site=stackoverflow")
 
