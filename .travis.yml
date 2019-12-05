@@ -1,3 +1,11 @@
+language: julia
+
+julia:
+  - 1.0
+
+os:
+  - linux
+
 jobs:
   include:
     - stage: "Documentation"
