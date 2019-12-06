@@ -25,4 +25,8 @@ include("badges.jl")
 export 
     getrecentbadgerecipients
 
+include("siteinfo.jl")
+export 
+    getsiteinfo
+
 end # module
