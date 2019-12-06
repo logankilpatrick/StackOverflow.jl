@@ -1,3 +1,9 @@
+"""
+    searcherror(intitle::String)
+
+Adding the ability to search for an error through StackOverflow.jl while in the Julia Terminal.
+"""
+
 using StackOverflow, HTTP
 
 function searcherror(intitle::String)
