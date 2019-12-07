@@ -8,4 +8,4 @@ qHolder = getrecentquestionsfortag()
 @test_nowarn getrecentbadgerecipients()
 
 siteinfoholder = getsiteinfo()
-@test_nowarn println(siteinfoholder.total_users)
+@test_nowarn dump(siteinfoholder)
