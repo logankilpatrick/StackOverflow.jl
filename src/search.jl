@@ -4,7 +4,7 @@
 Adding the ability to search for an error through StackOverflow.jl while in the Julia Terminal.
 """
 
-using StackOverflow, HTTP
+using StackOverflow
 
 function searcherror(intitle::String)
     data = replace(intitle, " " => "%20")
