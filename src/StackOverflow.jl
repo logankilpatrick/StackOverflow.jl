@@ -25,6 +25,10 @@ include("badges.jl")
 export
     getrecentbadgerecipients
 
+include("siteinfo.jl")
+export 
+    getsiteinfo
+
 include("search.jl")
 export
     searcherror
