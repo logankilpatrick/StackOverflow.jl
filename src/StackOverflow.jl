@@ -25,4 +25,8 @@ include("badges.jl")
 export
     getrecentbadgerecipients
 
+include("search.jl")
+export
+    searcherror
+
 end # module
