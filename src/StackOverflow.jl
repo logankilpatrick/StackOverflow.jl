@@ -19,14 +19,18 @@ export
 
 include("answers.jl")
 export
-    getquestions
+    getanswers
 
 include("badges.jl")
-export 
+export
     getrecentbadgerecipients
 
 include("siteinfo.jl")
 export 
     getsiteinfo
+
+include("search.jl")
+export
+    searcherror
 
 end # module
