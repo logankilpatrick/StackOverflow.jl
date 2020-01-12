@@ -7,7 +7,7 @@ Adding the ability to search for an tag through StackOverflow.jl while in the Ju
 """
 function searchtag(intitle::String)
     data = replace(intitle, " " => "%20")
-    r = HTTP.request("GET", "https://api.stackexchange.com/2.2/tags?order=desc&sort=popular&intitle=$(data)&site=stackoverflow")
+    r = HTTP.request("GET", "https://api.stackexchange.com/2.2/tags?order=desc&sort=popular&inname=$(data)&site=stackoverflow")
     json_obj = StackOverflow.convert_HTTP_Response_To_JSON(r)
     for (k, v) in json_obj
         if occursin("items", k)
