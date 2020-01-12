@@ -33,4 +33,8 @@ include("search.jl")
 export
     searcherror
 
+include("tags.jl")
+export
+    searchtag
+
 end # module
