@@ -10,6 +10,9 @@ checkmyprivileges
 getprivileges
 getquestions
 getrecentbadgerecipients
+getsiteinfo
+searcherror
+searchtag
 ```
 
 ## Index
