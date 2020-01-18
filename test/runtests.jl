@@ -10,4 +10,10 @@ qHolder = getrecentquestionsfortag()
 siteinfoholder = getsiteinfo()
 @test_nowarn dump(siteinfoholder)
 
-@test_nowarn searchtag("julia")
+@test_nowarn StackOverflow.searchtag("julia")
+
+aHolder = StackOverflow.getanswers()
+qeHolder = StackOverflow.searcherror()
+@test typeof(aHolder[1].question_id) == Int
+@test typeof(aHolder[1].score) == Int
+@test typeof(qeHolder[1].score) == Int

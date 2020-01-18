@@ -16,25 +16,24 @@ export
 include("utils.jl")
 export
     convert_HTTP_Response_To_JSON
+    makeanswersarray
+    makequestionsarray
 
 include("answers.jl")
-export
-    getanswers
+export getanswers
 
 include("badges.jl")
 export
     getrecentbadgerecipients
 
 include("siteinfo.jl")
-export 
+export
     getsiteinfo
 
 include("search.jl")
-export
-    searcherror
+export searcherror
 
 include("tags.jl")
-export
-    searchtag
+export searchtag
 
 end # module
