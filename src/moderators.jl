@@ -1,42 +1,39 @@
 using StackOverflow
 
 mutable struct Person
-    view_count::Vector
-    down_vote_count::Vector
-    up_vote_count::Vector
-    answer_count::Vector
-    question_count::Vector
-    account_id::Vector
-    is_employee::Vector
-    last_modified_date::Vector
-    last_access_date::Vector
-    reputation_change_year::Vector
-    reputation_change_quarter::Vector
-    reputation_change_month::Vector
-    reputation_change_week::Vector
-    reputation_change_day::Vector
-    reputation::Vector
-    creation_date::Vector
-    user_type::Vector
-    user_id::Vector
-    accept_rate::Vector
-    about_me::Vector
-    location::Vector
-    website_url::Vector
-    link::Vector
-    profile_image::Vector
-    display_name::Vector
-    badge_counts::Vector
+    view_count::Int
+    down_vote_count::Int
+    up_vote_count::Int
+    answer_count::Int
+    question_count::Int
+    account_id::String
+    is_employee::Bool
+    last_modified_date::String
+    last_access_date::String
+    reputation_change_year::String
+    reputation_change_quarter::String
+    reputation_change_month::String
+    reputation_change_week::String
+    reputation_change_day::String
+    reputation::Int
+    creation_date::String
+    user_type::String
+    user_id::String
+    accept_rate::String
+    about_me::String
+    location::String
+    website_url::String
+    link::String
+    profile_image::String
+    display_name::String
+    badge_counts::Dict
     
-    Person(view_count::Vector = [], down_vote_count::Vector = [], up_vote_count::Vector = [],
-        answer_count::Vector = [], question_count::Vector = [], account_id::Vector = [],
-        is_employee::Vector = [], last_modified_date::Vector = [], last_access_date::Vector = [],
-        reputation_change_year::Vector = [], reputation_change_quarter::Vector = [],
-        reputation_change_month::Vector = [], reputation_change_week::Vector = [],
-        reputation_change_day::Vector = [], reputation::Vector = [], creation_date::Vector = [],
-        user_type::Vector = [], user_id::Vector = [], accept_rate::Vector = [], about_me::Vector = [],
-        location::Vector = [], website_url::Vector = [], link::Vector = [], profile_image::Vector = [],
-        display_name::Vector = [], badge_counts::Vector = []) =
+    Person(view_count::Int = 0, down_vote_count::Int = 0, up_vote_count::Int = 0, answer_count::Int = 0, question_count::Int  = 0,
+            account_id::String = "", is_employee::Bool = false, last_modified_date::String = "", last_access_date::String = "",
+            reputation_change_year::String = "", reputation_change_quarter::String = "", reputation_change_month::String = "",
+            reputation_change_week::String = "", reputation_change_day::String = "", reputation::Int = 0, creation_date::String = "",
+            user_type::String = "", user_id::String = "", accept_rate::String = "", about_me::String = "", location::String = "",
+            website_url::String = "", link::String = "", profile_image::String = "", display_name::String = "", badge_counts::Dict = Dict()) =
     new(view_count, down_vote_count, up_vote_count, answer_count,
                 question_count, account_id, is_employee, last_modified_date, last_access_date,
                 reputation_change_year, reputation_change_quarter, reputation_change_month,
@@ -71,88 +68,86 @@ function getmoderators(page::Int = 1, pagesize::Int = 1, fromdate::String = "", 
         if occursin("items", k)
             for item in v
                 
-                view_count =                Vector()
-                down_vote_count =           Vector()
-                up_vote_count =             Vector()
-                answer_count =              Vector()
-                question_count =            Vector()
-                account_id =                Vector()
-                is_employee =               Vector()
-                last_modified_date =        Vector()
-                last_access_date =          Vector()
-                reputation_change_year =    Vector()
-                reputation_change_quarter = Vector()
-                reputation_change_month =   Vector()
-                reputation_change_week =    Vector()
-                reputation_change_day =     Vector()
-                reputation =                Vector()
-                creation_date =             Vector()
-                user_type =                 Vector()
-                user_id =                   Vector()
-                accept_rate =               Vector()
-                about_me =                  Vector()
-                location =                  Vector()
-                website_url =               Vector()
-                link =                      Vector()
-                profile_image =             Vector()
-                display_name =              Vector()
-                badge_counts =              Vector()
+                view_count = 0
+                down_vote_count = 0
+                up_vote_count = 0
+                answer_count = 0
+                question_count = 0
+                account_id = ""
+                is_employee = false
+                last_modified_date = ""
+                last_access_date = ""
+                reputation_change_year = ""
+                reputation_change_quarter = ""
+                reputation_change_month = ""
+                reputation_change_week = ""
+                reputation_change_day = ""
+                reputation = 0
+                creation_date = ""
+                user_type = ""
+                user_id = ""
+                accept_rate = ""
+                about_me = ""
+                location = ""
+                website_url = ""
+                link = ""
+                profile_image = ""
+                display_name = ""
+                badge_counts = Dict()
                 
                 for (key, value) in item
                     if occursin("view_count", key)
-                        push!(view_count, value)
-                    elseif occursin("view_count", key)
-                        push!(view_count, value)
+                        view_count = value
                     elseif occursin("down_vote_count", key)
-                        push!(down_vote_count, value)
+                        down_vote_count = value
                     elseif occursin("up_vote_count", key)
-                        push!(up_vote_count, value)
+                        up_vote_count = value
                     elseif occursin("answer_count", key)
-                        push!(answer_count, value)
+                        answer_count = value
                     elseif occursin("question_count", key)
-                        push!(question_count, value)
+                        question_count = value
                     elseif occursin("account_id", key)
-                        push!(account_id, value)
+                        account_id = string(value)
                     elseif occursin("is_employee", key)
-                        push!(is_employee, value)
+                        is_employee = value
                     elseif occursin("last_modified_date", key)
-                        push!(last_modified_date, value)
+                        last_modified_date = string(value)
                     elseif occursin("last_access_date", key)
-                        push!(last_access_date, value)
+                        last_access_date = string(value)
                     elseif occursin("reputation_change_year", key)
-                        push!(reputation_change_year, value)
+                        reputation_change_year = string(value)
                     elseif occursin("reputation_change_quarter", key)
-                        push!(reputation_change_quarter, value)
+                        reputation_change_quarter = string(value)
                     elseif occursin("reputation_change_month", key)
-                        push!(reputation_change_month, value)
+                        reputation_change_month = string(value)
                     elseif occursin("reputation_change_week", key)
-                        push!(reputation_change_week, value)
+                        reputation_change_week = string(value)
                     elseif occursin("reputation_change_day", key)
-                        push!(reputation_change_day, value)
+                        reputation_change_day = string(value)
                     elseif occursin("reputation", key)
-                        push!(reputation, value)
+                        reputation = value
                     elseif occursin("creation_date", key)
-                        push!(creation_date, value)
+                        creation_date = string(value)
                     elseif occursin("user_type", key)
-                        push!(user_type, value)
+                        user_type = string(value)
                     elseif occursin("user_id", key)
-                        push!(user_id, value)
+                        user_id = string(value)
                     elseif occursin("accept_rate", key)
-                        push!(accept_rate, value)
+                        accept_rate = string(value)
                     elseif occursin("about_me", key)
-                        push!(about_me, value)
+                        about_me = string(value)
                     elseif occursin("location", key)
-                        push!(location, value)
+                        location = string(value)
                     elseif occursin("website_url", key)
-                        push!(website_url, value)
+                        website_url = string(value)
                     elseif occursin("link", key)
-                        push!(link, value)
+                        link = string(value)
                     elseif occursin("profile_image", key)
-                        push!(profile_image, value)
+                        profile_image = string(value)
                     elseif occursin("display_name", key)
-                        push!(display_name, value)
+                        display_name = string(value)
                     elseif occursin("badge_counts", key)
-                        push!(badge_counts, value)
+                        badge_counts = value
                     end
                 end
                 person_data = Person(view_count, down_vote_count, up_vote_count, answer_count,
