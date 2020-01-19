@@ -37,4 +37,8 @@ include("tags.jl")
 export
     searchtag
 
+include("users.jl")
+export
+    getusers
+
 end # module
