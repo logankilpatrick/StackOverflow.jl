@@ -5,6 +5,7 @@ qHolder = getrecentquestionsfortag()
 @test_nowarn qHolder[1].answer_count
 
 @test_nowarn getrecentbadgerecipients()
+@test_nowarn geterrors()
 
 siteinfoholder = getsiteinfo()
 @test_nowarn dump(siteinfoholder)
@@ -16,6 +17,9 @@ siteinfoholder = getsiteinfo()
 aHolder = getanswers()
 @test typeof(aHolder[1].question_id) == Int
 
-
 @test_nowarn StackOverflow.getanswerfromquestion(qHolder[1])
 @test_nowarn StackOverflow.getquestionfromanswer(aHolder[1])
+
+@test_nowarn getusers()
+@test_nowarn getcomments()
+@test_nowarn getsuggested_edits()
