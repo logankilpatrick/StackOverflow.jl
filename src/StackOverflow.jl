@@ -45,4 +45,8 @@ include("comments.jl")
 export
     getcomments
 
+include("suggestededits.jl")
+export
+    getsuggested_edits
+
 end # module

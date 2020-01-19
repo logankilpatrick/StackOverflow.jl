@@ -1,9 +1,9 @@
 using StackOverflow, HTTP
 
 """
-    getusers(sort::string = "reputation", order::String = "desc")
+    getusers(sort::string = "reputation", order::string = "desc")
 
-    Prints 30 top users in decreasing(default)/ascending order of their reputation(default)/creation_date/displau_name/last_modified_date on the site.
+    Prints 30 top users in descending(default)/ascending order of their reputation(default)/creation_date/display_name/last_modified_date on the site.
 """
 
 function getusers(sort::String = "reputation", order::String = "desc" )
