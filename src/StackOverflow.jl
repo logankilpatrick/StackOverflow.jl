@@ -49,4 +49,9 @@ include("suggestededits.jl")
 export
     getsuggested_edits
 
+include("errors.jl")
+export
+    geterrors
+
+
 end # module
