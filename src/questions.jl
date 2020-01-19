@@ -1,19 +1,68 @@
 using StackOverflow
 
-mutable struct Questions
-    link::Vector
-    view_count::Vector
-    creation_date::Vector
-    is_answered::Vector
-    owner::Vector
-    last_activity_date::Vector
-    score::Vector
-    accepted_answer_id::Vector
-    question_id::Vector
-    tags::Vector
-    title::Vector
-    answer_count::Vector
+"""
+    makequestionsarray(json_obj::Dict)
+
+Returns a Vector of `Question`s extracted from a json object from stackexchange API.
+"""
+function makequestionsarray(json_obj::Dict)
+    questionholder = Vector()
+    for (k, v) in json_obj
+        if occursin("items", k)
+            for item in v
+                link = ""
+                view_count = 0
+                creation_date = 0
+                is_answered = false
+                owner = Dict()
+                last_activity_date = 0
+                score = 0
+                accepted_answer_id = 0
+                question_id = 0
+                title = 0
+                answer_count = 0
+                tags = []
+                title = ""
+
+                for (key, value) in item
+                    if occursin("link", key)
+                        link = value
+                    elseif occursin("view_count", key)
+                        view_count = value
+                    elseif occursin("creation_date", key)
+                        creation_date = value
+                    elseif occursin("is_answered", key)
+                        is_answered = value
+                    elseif occursin("owner", key)
+                        owner = value
+                    elseif occursin("last_activity_date", key)
+                        last_activity_date = value
+                    elseif occursin("score", key)
+                        score = value
+                    elseif occursin("accepted_answer_id", key)
+                        accepted_answer_id = value
+                    elseif occursin("question_id", key)
+                        question_id = value
+                    elseif occursin("tags", key)
+                        tags = value
+                    elseif occursin("title", key)
+                        title = value
+                    elseif occursin("answer_count", key)
+                        answer_count = value
+                    end
+                end
+
+                question = Question(link, view_count, creation_date, is_answered, owner,
+                        last_activity_date, score, accepted_answer_id, question_id, tags, title,
+                        answer_count)
+                push!(questionholder, question)
+
+            end
+        end
+    end
+    questionholder
 end
+
 
 """
     getrecentquestionsfortag(;tag::String = "Julia", site::String = "stackoverflow", order::String = "desc",
@@ -37,61 +86,18 @@ function getrecentquestionsfortag(;tag::String = "Julia", site::String = "stacko
     end
 
     json = convert_HTTP_Response_To_JSON(r)
+    questionholder = makequestionsarray(json)
+end
 
-    for (k, v) in json
-        if occursin("items", k)
-            for item in v
 
-                link                = Vector()
-                view_count          = Vector()
-                creation_date       = Vector()
-                is_answered         = Vector()
-                owner               = Vector()
-                last_activity_date  = Vector()
-                score               = Vector()
-                accepted_answer_id  = Vector()
-                question_id         = Vector()
-                tags                = Vector()
-                title               = Vector()
-                answer_count        = Vector()
 
-                for (key, value) in item
-                    if occursin("link", key)
-                        push!(link, value)
-                    elseif occursin("view_count", key)
-                        push!(view_count, value)
-                    elseif occursin("creation_date", key)
-                        push!(creation_date, value)
-                    elseif occursin("is_answered", key)
-                        push!(is_answered, value)
-                    elseif occursin("owner", key)
-                        push!(owner, value)
-                    elseif occursin("last_activity_date", key)
-                        push!(last_activity_date, value)
-                    elseif occursin("score", key)
-                        push!(score, value)
-                    elseif occursin("accepted_answer_id", key)
-                        push!(accepted_answer_id, value)
-                    elseif occursin("question_id", key)
-                        push!(question_id, value)
-                    elseif occursin("tags", key)
-                        push!(tags, value)
-                    elseif occursin("title", key)
-                        push!(title, value)
-                    elseif occursin("answer_count", key)
-                        push!(answer_count, value)
-                    end
-                    # println(key)
-                end
-                question = Questions(link, view_count, creation_date, is_answered, owner,
-                    last_activity_date, score, accepted_answer_id, question_id, tags, title,
-                    answer_count)
+"""
+    getquestionfromanswer(ans::Answer; sort::String = "activity", order::String = "desc")
 
-                push!(questionholder, question)
-            end
-
-            return questionholder
-        end
-    end
-
+Returns a `Vector` of `Question`s whose one of the answers is `ans` of type `Answer`.
+"""
+function getquestionfromanswer(ans::Answer; sort::String = "activity", order::String = "desc")
+    r = HTTP.request("GET", "https://api.stackexchange.com/2.2/answers/$(ans.answer_id)/questions?order=$(order)&sort=$(sort)&site=stackoverflow")
+    json = convert_HTTP_Response_To_JSON(r)
+    questionholder = makequestionsarray(json)
 end
