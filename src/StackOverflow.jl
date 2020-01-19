@@ -45,13 +45,11 @@ export
 include("utils.jl")
 export
     convert_HTTP_Response_To_JSON
-    makeanswersarray
-    makequestionsarray
 
 include("answers.jl")
 export
     getanswers
-    getanswerforquestion
+    getanswerfromquestion
 
 include("badges.jl")
 export

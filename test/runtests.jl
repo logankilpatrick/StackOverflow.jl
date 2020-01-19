@@ -11,11 +11,11 @@ siteinfoholder = getsiteinfo()
 
 @test_nowarn searchtag("julia")
 
-aHolder = getanswers()
 @test_nowarn StackOverflow.searcherror()
 
+aHolder = getanswers()
 @test typeof(aHolder[1].question_id) == Int
 
 
-@test_nowarn StackOverflow.getanswerforquestion(qHolder[1])
+@test_nowarn StackOverflow.getanswerfromquestion(qHolder[1])
 @test_nowarn StackOverflow.getquestionfromanswer(aHolder[1])
