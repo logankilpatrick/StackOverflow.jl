@@ -23,3 +23,8 @@ aHolder = getanswers()
 @test_nowarn getusers()
 @test_nowarn getcomments()
 @test_nowarn getsuggested_edits()
+
+@test_nowarn StackOverflow.getmoderators()
+@test_nowarn StackOverflow.getopenquestions()
+@test_nowarn StackOverflow.getnoanswerquestions()
+@test_nowarn StackOverflow.getfeaturedquestions()
