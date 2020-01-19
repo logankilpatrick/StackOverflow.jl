@@ -1,35 +1,10 @@
 using StackOverflow
 
+"""
+    makeanswersarray(json_obj::Dict)
 
-mutable struct Question
-    link::String
-    view_count::Int
-    creation_date::Int
-    is_answered::Bool
-    owner::Dict
-    last_activity_date::Int
-    score::Int
-    accepted_answer_id::Int
-    question_id::Int
-    tags::Vector
-    title::String
-    answer_count::Int
-end
-
-mutable struct Answer
-    owner::Dict
-    is_accepted::Bool
-    score::Int
-    last_activity_date::Int
-    last_edit_date::Int
-    community_owned_date::Int
-    locked_date::Int
-    creation_date::Int
-    answer_id::Int
-    question_id::Int
-end
-
-
+Returns a Vector of `Answer` type extracted from a json object from stackexchange API.
+"""
 function makeanswersarray(json_obj::Dict)
     answerholder = Vector()
     for (k, v) in json_obj
@@ -67,7 +42,6 @@ function makeanswersarray(json_obj::Dict)
                         question_id = value
                     end
                 end
-
                 answer = Answer(owner,
                  is_accepted,
                  score,
@@ -87,7 +61,11 @@ function makeanswersarray(json_obj::Dict)
     answerholder
 end
 
+"""
+    makequestionsarray(json_obj::Dict)
 
+Returns a Vector of `Question`s extracted from a json object from stackexchange API.
+"""
 function makequestionsarray(json_obj::Dict)
     questionholder = Vector()
     for (k, v) in json_obj

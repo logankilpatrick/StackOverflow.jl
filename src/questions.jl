@@ -25,3 +25,16 @@ function getrecentquestionsfortag(;tag::String = "Julia", site::String = "stacko
     json = convert_HTTP_Response_To_JSON(r)
     questionholder = makequestionsarray(json)
 end
+
+
+
+"""
+    getquestionfromanswer(ans::Answer; sort::String = "activity", order::String = "desc")
+
+Returns a `Vector` of `Question`s whose one of the answers is `ans` of type `Answer`.
+"""
+function getquestionfromanswer(ans::Answer; sort::String = "activity", order::String = "desc")
+    r = HTTP.request("GET", "https://api.stackexchange.com/2.2/answers/$(ans.answer_id)/questions?order=$(order)&sort=$(sort)&site=stackoverflow")
+    json = convert_HTTP_Response_To_JSON(r)
+    questionholder = makequestionsarray(json)
+end

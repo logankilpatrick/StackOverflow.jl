@@ -1,6 +1,5 @@
-using StackOverflow
 using Test
-
+using StackOverflow
 
 qHolder = getrecentquestionsfortag()
 @test_nowarn qHolder[1].answer_count
@@ -10,10 +9,13 @@ qHolder = getrecentquestionsfortag()
 siteinfoholder = getsiteinfo()
 @test_nowarn dump(siteinfoholder)
 
-@test_nowarn StackOverflow.searchtag("julia")
+@test_nowarn searchtag("julia")
 
-aHolder = StackOverflow.getanswers()
-qeHolder = StackOverflow.searcherror()
+aHolder = getanswers()
+@test_nowarn StackOverflow.searcherror()
+
 @test typeof(aHolder[1].question_id) == Int
-@test typeof(aHolder[1].score) == Int
-@test typeof(qeHolder[1].score) == Int
+
+
+@test_nowarn StackOverflow.getanswerforquestion(qHolder[1])
+@test_nowarn StackOverflow.getquestionfromanswer(aHolder[1])
