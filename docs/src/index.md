@@ -13,6 +13,10 @@ getrecentbadgerecipients
 getsiteinfo
 searcherror
 searchtag
+getfeaturedquestions
+getopenquestions
+getmoderators
+getnoanswerquestions
 ```
 
 ## Index

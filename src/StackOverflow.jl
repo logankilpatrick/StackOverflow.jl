@@ -83,5 +83,20 @@ include("errors.jl")
 export
     geterrors
 
+include("unanswered.jl")
+export
+    getopenquestions
 
+include("noanswers.jl")
+export
+    getnoanswerquestions
+
+include("featuredquestions.jl")
+export
+    getfeaturedquestions
+
+include("moderators.jl")
+export
+    getmoderators
+    
 end # module
