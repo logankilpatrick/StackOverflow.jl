@@ -37,8 +37,21 @@ include("tags.jl")
 export
     searchtag
 
+include("users.jl")
+export
+    getusers
+
+include("comments.jl")
+export
+    getcomments
+
+include("suggestededits.jl")
+export
+    getsuggested_edits
+
 include("errors.jl")
 export
     geterrors
+
 
 end # module
