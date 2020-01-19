@@ -37,4 +37,8 @@ include("tags.jl")
 export
     searchtag
 
+include("errors.jl")
+export
+    geterrors
+
 end # module
