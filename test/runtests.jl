@@ -12,3 +12,4 @@ siteinfoholder = getsiteinfo()
 
 @test_nowarn searchtag("julia")
 @test_nowarn getusers()
+@test_nowarn getcomments()

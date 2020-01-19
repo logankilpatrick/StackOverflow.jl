@@ -41,4 +41,8 @@ include("users.jl")
 export
     getusers
 
+include("comments.jl")
+export
+    getcomments
+
 end # module

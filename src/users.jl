@@ -3,7 +3,7 @@ using StackOverflow, HTTP
 """
     getusers(sort::string = "reputation", order::String = "desc")
 
-    Prints 30 top users in decreasing order of their reputation(default)/creation_date/displau_name/last_modified_date
+    Prints 30 top users in decreasing(default)/ascending order of their reputation(default)/creation_date/displau_name/last_modified_date on the site.
 """
 
 function getusers(sort::String = "reputation", order::String = "desc" )
