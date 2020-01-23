@@ -12,7 +12,7 @@ siteinfoholder = getsiteinfo()
 
 @test_nowarn searchtag("julia")
 
-@test_nowarn StackOverflow.searcherror()
+@test_nowarn StackOverflow.searcherror("404")
 
 aHolder = getanswers()
 @test typeof(aHolder[1].question_id) == Int

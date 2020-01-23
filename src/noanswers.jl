@@ -70,7 +70,7 @@ function getnoanswerquestions(page::Int = 1, pagesize::Int = 1, fromdate::String
                     end
                     # println(key)
                 end
-                question = StackOverflow.Questions(link, view_count, creation_date, is_answered, owner,
+                question = StackOverflow.Question(link, view_count, creation_date, is_answered, owner,
                     last_activity_date, score, accepted_answer_id, question_id, tags, title,
                     answer_count)
 
@@ -78,6 +78,6 @@ function getnoanswerquestions(page::Int = 1, pagesize::Int = 1, fromdate::String
             end
 
         end
-    end    
+    end
     return questionholder
 end
