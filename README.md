@@ -5,6 +5,7 @@
 [![alt text](https://img.shields.io/badge/slack-join%20the%20StackOverflow%20channel%20on%20Slack-9d72b1?style=for-the-badge&logo=slack)](https://slackinvite.julialang.org) 
 
 [![codecov](https://codecov.io/gh/logankilpatrick/StackOverflow.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/logankilpatrick/StackOverflow.jl)
+[![Build Status](https://travis-ci.com/logankilpatrick/StackOverflow.jl.svg?branch=master)](https://travis-ci.com/logankilpatrick/StackOverflow.jl)
 
 ![GitHub followers](https://img.shields.io/github/followers/logankilpatrick?label=Follow&style=social)
 
