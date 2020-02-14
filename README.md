@@ -9,7 +9,6 @@
 
 ![GitHub followers](https://img.shields.io/github/followers/logankilpatrick?label=Follow&style=social)
 
-
 This package is designed as a wrapped for the [StackOverflow API](https://api.stackexchange.com).
 
 Support from the community would be welcomed in order to expedite coverage of all of the basic abilities.
