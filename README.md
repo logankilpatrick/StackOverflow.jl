@@ -6,6 +6,8 @@
 
 [![codecov](https://codecov.io/gh/logankilpatrick/StackOverflow.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/logankilpatrick/StackOverflow.jl)
 [![Build Status](https://travis-ci.com/logankilpatrick/StackOverflow.jl.svg?branch=master)](https://travis-ci.com/logankilpatrick/StackOverflow.jl)
+[![](https://img.shields.io/badge/docs-dev-blue.svg)](https://logankilpatrick.github.io/StackOverflow.jl/dev/)
+
 
 ![GitHub followers](https://img.shields.io/github/followers/logankilpatrick?label=Follow&style=social)
 
